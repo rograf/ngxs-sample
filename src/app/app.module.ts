@@ -1,3 +1,5 @@
+import { LogsState } from './_store/state/log.state';
+import { environment } from './../environments/environment.prod';
 import { CoreModule } from './_core/core.module';
 import { LoginModule } from './login/login.module';
 import { LogsModule } from './logs/logs.module';
@@ -6,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { AppComponent } from './app.component';
     CoreModule,
     LogsModule,
     LoginModule,
+    NgxsModule.forRoot([LogsState], {
+      developmentMode: !environment.production
+    }),
     AppRoutingModule,
   ],
   providers: [],

@@ -1,1 +1,22 @@
-<p>logs works!</p>
+<h4>Logs</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>IP</th>
+      <th>Date</th>
+      <th>User</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let log of (logs$ | async)">
+      <td>{{log.id}}</td>
+      <td>{{log.ip}}</td>
+      <td>{{log.date | date: 'short'}}</td>
+      <td>{{log.user}}</td>
+      <td>{{log.name}}</td>
+    </tr>
+  </tbody>
+</table>
