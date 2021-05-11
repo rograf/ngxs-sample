@@ -1,3 +1,4 @@
+import { AuthDirective } from './directives/auth.directive';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,11 +9,19 @@ const MODULES = [
   RouterModule,
 ]
 
+const DIRECTIVES = [
+  AuthDirective
+]
+
 @NgModule({
-  declarations: [],
+  declarations: [...DIRECTIVES],
   imports: [
     CommonModule,
     ...MODULES
-  ]
+  ],
+   exports: [
+    ...MODULES,
+    ...DIRECTIVES
+   ]
 })
 export class CoreModule { }

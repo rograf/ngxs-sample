@@ -9,6 +9,7 @@ export class LogsService {
   constructor() { }
 
   query(){
+    console.log('[GET LOGS]')
     return of({
       logs: [
         {id: '1', ip: '192.168.1.1', date: new Date().getTime() - 50 * 60 * 1000, name: '[LOGIN]', user: 'Admin'},

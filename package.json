@@ -20,8 +20,11 @@
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
     "@ngxs/logger-plugin": "^3.6.2-dev.master-eaa5d86",
+    "@ngxs/router-plugin": "^3.7.1",
+    "@ngxs/storage-plugin": "^3.7.1",
     "@ngxs/store": "^3.6.2-dev.master-eaa5d86",
     "bootstrap": "^5.0.0",
+    "ngxs-reset-plugin": "^1.3.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -1,1 +1,13 @@
-<p>login works</p>
+<h4>Sign in</h4>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" [(ngModel)]="model.username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" [(ngModel)]="model.password" name="password" required>
+  </div>
+  <div *ngIf="isShowAlert" class="alert alert-danger">The username or password you have entered is invalid</div>
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Sign In</button>
+</form>

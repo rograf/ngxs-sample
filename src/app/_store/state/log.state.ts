@@ -1,3 +1,4 @@
+import { Logout } from './../actions/auth.action';
 import { LogsService } from './../../_core/services/logs.service';
 import { LoadLogs } from './../actions/log.action';
 import { Injectable } from '@angular/core';
@@ -43,6 +44,11 @@ export class LogsState {
       state.logs = (await this.logsService.query().toPromise()).logs
       ctx.setState({...state});
     }
+  }
+
+  @Action(Logout)
+  async reset(ctx: StateContext<LogsStateModel>) {
+    ctx.setState({logs: [], date: null});
   }
 
 }
